@@ -7,7 +7,9 @@
 </head>
 <body>
     <ul>
-        <li>Temporary todo item</li>
+        {% for todo_item in all_items %}
+        <li>{{todo_item.content}}</li>
+        {% endfor %}
     </ul>
 </body>
 </html>
