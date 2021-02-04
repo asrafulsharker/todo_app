@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background:#a9d4cd">
     <ul>
         {% for todo_item in all_items %}
-        <li>{{todo_item.content}}
+        <li style="color:red;text-align: center;display: inline;text-decoration: none;"><p >{{todo_item.content}}</p>
             <form action="/deleteTodo/{{todo_item.id}}/" method="post">{% csrf_token%}
-                <input type="submit" value="Delete"/>
+                <input type="submit" value="Delete" style="background:#c24936;border-radius:20px; color:white;cursor:pointer; padding:10px 20px"/>
             </form>
         </li>
         {% endfor %}
     </ul>
-    <form action="/addTodo/" method="post">{% csrf_token%}
-        <input type="text" name="content"/>
-        <input type="submit" value="Add"/>
+    <form style="text-align :center;" action="/addTodo/" method="post">{% csrf_token%}
+        <input style="height:35px ;margin:auto auto; width:300px;border-radius:20px;" type="text" name="content" required/>
+        <input style="background:#56cc75;border-radius:20px; color:white;cursor:pointer; padding:10px 20px" type="submit" value="Add"/>
     </form>
 
 </body>
